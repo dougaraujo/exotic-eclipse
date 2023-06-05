@@ -1,6 +1,7 @@
 ---
 const { platform, username } = Astro.props;
 ---
+<a href={`https://${platform}.com/${username}`}>{platform}</a>
 
 <style>
   a {
@@ -11,5 +12,3 @@ const { platform, username } = Astro.props;
     border-radius: 0.25rem;
   }
 </style>
-
-<a href={`https://${platform}.com/${username}`}>{platform}</a>
