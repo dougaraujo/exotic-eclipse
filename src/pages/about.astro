@@ -1,4 +1,6 @@
 ---
+import './styles/global.css';
+
 const pageTitle = 'About me';
 
 const identity = {
@@ -17,6 +19,11 @@ const skills = [
   'MySQL',
   'Astro',
 ];
+
+
+const fontWeigth = 'bold';
+const textCase = 'uppercase';
+const skillColor = 'navy';
 ---
 
 <html>
@@ -26,6 +33,18 @@ const skills = [
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style define:vars={{ skillColor, fontWeigth, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+
+      .skill {
+        color: var(--skillColor);
+        font-weigth: var(--fontWeigth);
+        text-transform: var(--textCase);
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -56,7 +75,7 @@ const skills = [
       </ul>
       <p>My skills are:</p>
       <ul>
-        {skills.map((skill) => <li>{skill}</li>)}
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
     </main>
   </body>
