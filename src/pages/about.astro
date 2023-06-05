@@ -1,5 +1,7 @@
 ---
-import './styles/global.css';
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = 'About me';
 
@@ -26,7 +28,7 @@ const textCase = 'uppercase';
 const skillColor = 'navy';
 ---
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -48,11 +50,7 @@ const skillColor = 'navy';
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-      </nav>
+      <Navigation />
     </header>
     <main>
       <h1>
@@ -78,5 +76,6 @@ const skillColor = 'navy';
         {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
     </main>
+    <Footer />
   </body>
 </html>
